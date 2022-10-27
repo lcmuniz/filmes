@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Filmes</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+	</head>
+	<body>
+		<div class="bg-red-500 text-white flex items-center p-2 gap-2">
+			<iconify-icon width="4em" icon="bxs:camera-movie"></iconify-icon>
+			<p class='text-3xl font-bold'>Meus Filmes</p>
+		</div>
+		<div class="p-4 flex flex-col gap-4">
+			<div>
+				<form>
+					<input name="filtro" value="{{filtro}}" placeholder="Pesquisar..." class="border p-2 w-full"/>
+				</form>
+			</div>
+			<table class='border w-full'>
+				<tr class="bg-gray-500 text-white">
+					<td class="p-2">Título</td>
+					<td>Direção</td>
+					<td class="text-center">Ano</td>
+					<td class="text-center">Estrelas</td>
+					<td class="text-center">Ação</td>
+				</tr>
+				{{#filmes}}
+				<tr class="odd:bg-gray-100">
+					<td class="p-2">{{titulo}}</td>
+					<td>{{direcao}}</td>
+					<td class="text-center">{{ano}}</td>
+					<td class="text-center">{{estrelas}}</td>
+					<td class="text-center">
+						<a href="/filmes/{{id}}" title="editar">
+							<iconify-icon icon="bxs:edit" class="cursor-pointer"></iconify-icon>
+						</a>
+					</td>
+				</tr>
+				{{/filmes}}
+			</table>
+		</div>
+	</body>
+</html>

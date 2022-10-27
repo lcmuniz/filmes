@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Filmes</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+	</head>
+	<body>
+		<div class="bg-red-500 text-white flex items-center p-2 gap-2">
+			<a href="/filmes"><iconify-icon width="4em" icon="bxs:camera-movie"></iconify-icon></a>
+			<a href="/filmes"><p class='text-3xl font-bold'>Meus Filmes</p></a>
+		</div>
+		{{#filme}}
+		<form class="p-4 flex flex-col gap-4" method="post">
+			<input type="hidden" name="id" />
+			<div class="flex flex-col">
+				<label>Título</label>
+				<input class="border p-4" name="titulo" value='{{titulo}}' />
+			</div>
+			<div class="flex flex-col">
+				<label>Título Original</label>
+				<input class="border p-4" name="tituloOriginal" value="{{tituloOriginal}}" />
+			</div>
+			<div class="flex flex-col">
+				<label>Direção</label>
+				<input class="border p-4" name="direcao" value="{{direcao}}"/>
+			</div>
+			<div class="flex flex-col">
+				<label>Roteiro</label>
+				<input class="border p-4" name="roteiro" value="{{roteiro}}"/>
+			</div>
+			<div class="flex flex-col">
+				<label>Elenco</label>
+				<input class="border p-4" name="elenco" value="{{elenco}}"/>
+			</div>
+			<div class="flex flex-col">
+				<label>Sinopse</label>
+				<textarea rows="3" class="border p-4" name="sinopse">{{sinopse}}</textarea>
+			</div>
+			<div class="flex gap-4">
+				<div class="flex flex-col flex-1">
+					<label>Estrelas</label>
+					<input class="border p-4" name="estrelas" value="{{estrelas}}" type='number' min="1" max="5"/>
+				</div>
+				<div class="flex flex-col flex-1">
+					<label>Ano</label>
+					<input class="border p-4" name="ano" value="{{ano}}"/>
+				</div>
+			</div>
+			<div class="flex flex-col">
+				<input type="submit" class="border p-4 bg-orange-300 hover:bg-orange-500 cursor-pointer text-white text-xl" />
+			</div>
+		</form>
+		{{/filme}}
+	</body>
+</html>
